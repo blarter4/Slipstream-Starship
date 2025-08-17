@@ -1,0 +1,11 @@
+title: Slipstream Starship
+description: Open-source interplanetary starship project. Starship first, dockyard second.
+theme: minima
+github:
+  is_project_page: true
+  repository_url: https://github.com/YOUR-ORG/slipstream-starship
+minima:
+  social_links:
+    - { platform: youtube, user_url: https://youtube.com/@yourchannel }
+    - { platform: discord, user_url: https://discord.gg/yourinvite }
+    - { platform: github, user_url: https://github.com/YOUR-ORG/slipstream-starship }
