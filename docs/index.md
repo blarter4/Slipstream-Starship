@@ -10,7 +10,7 @@ title: Slipstream Starship
 ### Get Started
 - 📄 Read the **[Master Plan](./Slipstream%20-%20Master%20Plan.docx)** (upload to Google Drive to view).
 - 🧭 Check the **[Roadmap](./ROADMAP.md)**.
-- 🛠️ Pick an issue in GitHub → join the matching Discord channel → submit a PR.
+- 🛠️ Pick an issue in **[GitHub](https://github.com/YOURUSERNAME/YOURREPO)** → join the matching Discord channel → submit a PR.
 
 ### Subsystems
 - **Propulsion:** Chemical vs Ion/Plasma baselines; (fusion placeholder)
