@@ -8,7 +8,7 @@ title: Slipstream Starship
 **Slipstream Starship** is an open, engineering-first effort to design a realistic interplanetary ship: propulsion, GNC, structures, thermal, power, life support, avionics, and payload. The **dockyard** is a supporting asset for assembly and refit.
 
 ### Get Started
-- 📄 Read the **[Master Plan](./Slipstream%20-%20Master%20Plan.docx)** (upload to Google Drive to view).
+- 📄 Read the **[Master Plan](./Slipstream%20-%20Master%20Plan.docx)* 
 - 🧭 Check the **[Roadmap](./ROADMAP.md)**.
 - 🛠️ Pick an issue in **[GitHub](https://github.com/blarter4/Slipstream-Starship)** → join the matching Discord channel → submit a PR.
 
@@ -23,4 +23,4 @@ title: Slipstream Starship
 - **Payload:** Hab/mission payloads
 
 ### Dockyard (Secondary)
-Minimal orbital assembly/refit requirements to support the starship.
+Minimal orbital assembly/refit requirements to support the starship
