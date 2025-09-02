@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Slipstream — Open Space Engineering</title>
+  <meta name="description" content="Slipstream: an open, SpaceX/Tesla‑clean program for starship and orbital dockyard engineering." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/hero.svg" as="image" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- SVG filters (goo & glass shine) -->
+  <svg class="visually-hidden" width="0" height="0" aria-hidden="true" focusable="false">
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 18 -8" result="goo" />
+      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+    </filter>
+    <filter id="glassNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="7" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.35"/>
+      </feComponentTransfer>
+    </filter>
+  </svg>
+
+  <canvas id="space-bg" aria-hidden="true"></canvas>
+
+  <header class="site-header" data-elevate>
+    <a class="brand" href="#top" aria-label="Slipstream Home">
+      <img src="assets/logo.svg" alt="" width="28" height="28" aria-hidden="true">
+      <span>SLIPSTREAM</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#vehicle">Subsystems</a></li>
+        <li><a href="#governance">Governance</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#join">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero section">
+      <div class="hero-media">
+        <img src="assets/hero.svg" alt="Abstract orbital arcs background" decoding="async" loading="eager">
+      </div>
+      <div class="hero-content wrap">
+        <h1 class="mega" data-reveal>Slipstream</h1>
+        <p class="lead" data-reveal data-delay="80">
+          An open program to design a modular starship and orbital dockyard—propulsion, structures, avionics, GNC, thermal, power, life support, and payload.
+        </p>
+        <div class="cta liquid-rail" data-reveal data-delay="140">
+          <a class="btn primary liquid" href="#join"><span>Get Involved</span></a>
+          <a class="btn ghost liquid" href="#docs"><span>Docs</span></a>
+          <span class="droplet" aria-hidden="true"></span>
+          <span class="droplet" aria-hidden="true"></span>
+          <span class="droplet" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission -->
+    <section id="mission" class="section">
+      <div class="wrap two-col">
+        <div>
+          <h2 data-reveal>Mission</h2>
+          <p data-reveal data-delay="60">
+            Build an openly verifiable spaceflight stack. Specifications, CAD, simulation models, tests, and flight results are public by design.
+          </p>
+          <ul class="ticks" data-reveal data-delay="120">
+            <li>Open designs under permissive licensing</li>
+            <li>Interfaces first: versioned subsystem contracts</li>
+            <li>Validated sims, reproducible rigs, real test data</li>
+            <li>Safety culture, documentation, and peer review</li>
+          </ul>
+          <div class="pillbar" data-reveal data-delay="180">
+            <span class="pill">Propulsion</span>
+            <span class="pill">Avionics</span>
+            <span class="pill">GNC</span>
+            <span class="pill">Structures</span>
+            <span class="pill">Thermal</span>
+            <span class="pill">Power</span>
+            <span class="pill">Life Support</span>
+            <span class="pill">Payload</span>
+          </div>
+        </div>
+        <figure class="card glass glass-deep" data-reveal>
+          <img src="assets/block-diagram.webp" alt="System block diagram" loading="lazy" decoding="async">
+          <figcaption>Subsystems connect via well‑documented, stable interfaces.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Subsystems -->
+    <section id="vehicle" class="section alt">
+      <div class="wrap">
+        <h2 data-reveal>Subsystems</h2>
+        <div class="grid3">
+          <article class="card glass" data-reveal>
+            <h3>Propulsion</h3>
+            <p>Engine cycles, feed systems, pressurization, and ground/flight test plans with CFD/FEM-backed iteration.</p>
+          </article>
+          <article class="card glass" data-reveal data-delay="60">
+            <h3>Avionics</h3>
+            <p>Radiation-tolerant computing, deterministic buses, and flight software you can build locally.</p>
+          </article>
+          <article class="card glass" data-reveal data-delay="120">
+            <h3>Structures</h3>
+            <p>Mass‑efficient primary/secondary structure with manufacturability constraints and open tooling.</p>
+          </article>
+          <article class="card glass" data-reveal data-delay="180">
+            <h3>GNC</h3>
+            <p>Actuators, sensors, filters, and guidance modes with HIL benches and public logs.</p>
+          </article>
+          <article class="card glass" data-reveal data-delay="240">
+            <h3>Thermal & Power</h3>
+            <p>Thermal control, TPS, and power generation/storage with clear derating and margins.</p>
+          </article>
+          <article class="card glass" data-reveal data-delay="300">
+            <h3>Life Support & Payload</h3>
+            <p>Closed‑loop ECLSS options and adaptable payload interfaces for research and ops.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Governance -->
+    <section id="governance" class="section">
+      <div class="wrap two-col">
+        <div>
+          <h2 data-reveal>Governance</h2>
+          <p data-reveal data-delay="60">
+            Slipstream uses a merit‑driven, review‑heavy model. Work is tracked in public repos with RFCs, issues, and milestones.
+          </p>
+          <ul class="ticks" data-reveal data-delay="120">
+            <li>RFCs for major changes</li>
+            <li>Codeowners & subsystem leads</li>
+            <li>Design reviews & test readiness reviews</li>
+            <li>Safety board & incident postmortems</li>
+          </ul>
+        </div>
+        <div class="card glass" data-reveal>
+          <h3>Repos</h3>
+          <ul class="links"><li><a href="https://github.com/blarter4/Slipstream-Starship" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:slipstreamstarship@gmail.com?subject=Discord%20Invite%20Request&body=Hi%2C%20please%20send%20me%20the%20Discord%20invite." rel="noopener">Discord</a></li><li><a href="#docs">Documentation</a></li><li><a href="#roadmap">Roadmap</a></li></ul>
+          <p class="small muted">Replace with your actual GitHub org links.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap" class="section">
+      <div class="wrap">
+        <h2 data-reveal>Roadmap</h2>
+        <ol class="timeline liquid-edge" data-reveal>
+          <li>
+            <span>Phase 0</span>
+            <strong>Website & Docs</strong>
+            <em>Ship site, define org, safety, and contribution playbooks.</em>
+          </li>
+          <li>
+            <span>Phase 1</span>
+            <strong>Interfaces & Baselines</strong>
+            <em>Subsystem contracts, CAD/sim seeds, test plans.</em>
+          </li>
+          <li>
+            <span>Phase 2</span>
+            <strong>Bench & Rig Tests</strong>
+            <em>Electronics, propulsion subscale, materials, thermal.</em>
+          </li>
+          <li>
+            <span>Phase 3</span>
+            <strong>Flight Articles</strong>
+            <em>Prototype integration, telemetry, open data.</em>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Join -->
+    <section id="join" class="section alt">
+      <div class="wrap two-col">
+        <div>
+          <h2 data-reveal>Join the Program</h2>
+          <p data-reveal data-delay="60">
+            Students, professionals, hobbyists—bring skills or learn by doing. We organize in the open and document everything.
+          </p>
+          <p><a class="btn primary liquid" href="mailto:slipstreamstarship@gmail.com"><span>Email Us</span></a></p>
+          
+        </div>
+        <div class="card glass glass-deep" data-reveal>
+          <h3>Quick Links</h3>
+          <ul class="links"><li><a href="https://github.com/blarter4/Slipstream-Starship" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:slipstreamstarship@gmail.com?subject=Discord%20Invite%20Request&body=Hi%2C%20please%20send%20me%20the%20Discord%20invite." rel="noopener">Discord</a></li><li><a href="#docs">Documentation</a></li><li><a href="#roadmap">Roadmap</a></li></ul>
+          <p class="small muted">Replace these with real URLs; the form uses a demo handler you can swap for any backend.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <a class="brand mini" href="#top">
+        <img src="assets/logo.svg" alt="" width="22" height="22" aria-hidden="true">
+        <span>SLIPSTREAM</span>
+      </a>
+      <nav aria-label="Footer">
+        <a href="#mission">Mission</a>
+        <a href="#vehicle">Subsystems</a>
+        <a href="#governance">Governance</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#join">Join</a>
+      </nav>
+      <p class="small muted">© <span id="year"></span> Slipstream. Built with a minimal, no‑framework stack.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
