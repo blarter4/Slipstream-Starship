@@ -1,0 +1,11 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="{{ '/' | relative_url }}">SLIPSTREAM</a>
+    <nav class="nav">
+    {%- assign items = site.nav -%}
+    {%- for item in items -%}
+      <a href="{{ item.url | relative_url }}" class="nav-link">{{ item.title }}</a>
+    {%- endfor -%}
+    </nav>
+  </div>
+</header>
