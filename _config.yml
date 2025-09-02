@@ -1,0 +1,27 @@
+title: Slipstream Starship
+description: Open-source interplanetary starship & minimal orbital dockyard
+url: ""        # set your custom domain later, or leave blank
+baseurl: ""    # do not include a trailing slash
+theme: null    # use our custom layouts/styles
+permalink: pretty
+
+# Only whitelisted plugins for GitHub Pages
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Build settings
+markdown: kramdown
+
+# Navigation
+nav:
+  - title: Home
+    url: /
+  - title: Roadmap
+    url: /roadmap/
+  - title: Contribute
+    url: /contribute/
+  - title: GitHub
+    url: https://github.com/blarter4/Slipstream-Starship
+  - title: Discord
+    url: https://discord.gg/
